@@ -26,18 +26,63 @@ listoftweets = []
 for tweet in range(len(tweetData)):
 	subtweet = tweetData[tweet]["text"]
 	listoftweets.append(subtweet)
-tweetstr = ""
-for subtweet in listoftweets:
-	tweetstr += subtweet + " "
-print(tweetstr)
-import wordcloud
-from wordcloud import WordCloud
-wordcloud = WordCloud().generate(tweetstr)
-plt.figure(figsize = (8, 8), facecolor = None)
-plt.imshow(wordcloud, interpolation = 'bilinear')
-plt.axis('off')
-plt.tight_layout(pad = 0)
+print(listoftweets)
+def wordcount(stringoftweet, string1):
+	counter= 0
+	string1 = string1.lower()
+	wordList = stringoftweet.split(' ')
+	for item in wordList:
+		if item.lower() == string1:
+			counter += 1
+	return counter
+
+wordcountlist = []
+for item in listoftweets:
+	wordoccurence = wordcount(item, "the")
+	wordcountlist.append(wordoccurence)
+print(wordcountlist)
+print (min(wordcountlist), max(wordcountlist))
+plt.hist(wordcountlist)
+plt.axis([min(wordcountlist), max(wordcountlist), 0, 15])
 plt.show()
+
+# tweetstr = ""
+# for subtweet in listoftweets:
+# 	tweetstr += subtweet + " "
+# print(tweetstr)
+
+'''
+def countLetter(string, letter):
+	count = 0
+	for let in string:
+		if let.lower() == letter:
+			count += 1
+	return count
+print(countLetter, "a")
+alpha = "qwertyuiopasdfghjklzxcvbnmmmmmmm"
+letters = (set(sorted(alpha)))
+
+for letter in letters:
+	print(f"letter:{letter} occurrences:{countLetter(tweetstr, letter)}")
+occurrences = []
+for letter in letters:
+	occurrences.append(countLetter(tweetstr, letter))
+print(occurrences)
+print (min(occurrences), max(occurrences))
+plt.hist(occurrences)
+plt.axis([min(occurrences), max(occurrences), 0, 10])
+plt.show()
+'''
+
+
+# import wordcloud
+# from wordcloud import WordCloud
+# wordcloud = WordCloud().generate(tweetstr)
+# plt.figure(figsize = (8, 8), facecolor = None)
+# plt.imshow(wordcloud, interpolation = 'bilinear')
+# plt.axis('off')
+# plt.tight_layout(pad = 0)
+# plt.show()
 # polaritylist = []
 # for tweet in listoftweets:
 # 	blob1 = TextBlob(tweet)
