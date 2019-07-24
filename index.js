@@ -8,8 +8,7 @@ for (i = 0; i<21;  i += 1){
  }
 var changeindex = 0
 change index ++
-var x =
-onclick=
+
 
  function GetTemp(){
    return 22.5;
@@ -31,9 +30,9 @@ function GetTemp2(type){
 console.log(GetTemp2("f"));
 console.log(GetTemp2("c"));
 
-var foz = getElementsByID(f)
-var fonts = ["'Geostar', cursive;", "'Lora', serif;"]
-var poz = 0
+var foz = getElementsByID(f);
+var fonts = ["'Geostar', cursive;", "'Lora', serif;"];
+var poz = 0 ;
 function changefont(){
   foz.style.fontFamily = fonts[poz];
   poz++;
@@ -45,6 +44,6 @@ function changefont(){
 document.getElementByID("specialfont").adsEventListener("click",
   function(){
     alert("Hello world");
-    document.getElementByID("specialfont").style.color = "green"
-    }
+    document.getElementByID("specialfont").style.color = "green";
+  }
 )
