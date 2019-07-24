@@ -9,7 +9,6 @@ for (i = 0; i<21;  i += 1){
 var changeindex = 0
 change index ++
 var x =
-fontss = [Geostar, Lora ]
 onclick=
 
  function GetTemp(){
@@ -31,3 +30,21 @@ function GetTemp2(type){
 }
 console.log(GetTemp2("f"));
 console.log(GetTemp2("c"));
+
+var foz = getElementsByID(f)
+var fonts = ["'Geostar', cursive;", "'Lora', serif;"]
+var poz = 0
+function changefont(){
+  foz.style.fontFamily = fonts[poz];
+  poz++;
+  if poz >= fonts.length{
+    poz = 0;
+  }
+}
+
+document.getElementByID("specialfont").adsEventListener("click",
+  function(){
+    alert("Hello world");
+    document.getElementByID("specialfont").style.color = "green"
+    }
+)
